@@ -1,4 +1,4 @@
-var app = angular.module('CogniApp.service', [
+var app = angular.module('CogniApp.services', [
 	'service.authService',
 	'service.postService',
 	'service.followService'

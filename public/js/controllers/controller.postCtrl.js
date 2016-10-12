@@ -8,7 +8,7 @@ app.controller('postCtrl', function($scope, postService, $rootScope, $anchorScro
     $scope.goToComments = function(post){
       $scope.selectPost(post);
       //path to comments of the selectedPost
-      //..use anchorScroll maybe...
+      //..use smoothScroll maybe...
     };
 
     $scope.loading = false;

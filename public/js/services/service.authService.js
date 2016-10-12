@@ -9,6 +9,7 @@ app.service('authService', function($q) {
       return auth.signInWithEmailAndPassword(userObj.email, userObj.password)
       .catch(function(error){
         console.log("There was an error loggin in : ", error.code, ": ", error.message);
+        
       });
     };
 

@@ -1,4 +1,4 @@
-var app = angular.module('CogniApp.controller', [
+var app = angular.module('CogniApp.controllers', [
 	'controller.authCtrl',
 	 'controller.readCtrl',
 	 'controller.addPostCtrl',

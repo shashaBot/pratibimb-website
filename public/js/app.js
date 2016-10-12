@@ -21,7 +21,7 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
     $stateProvider
         .state('home', {
             url: '/',
-            templateUrl: 'templates/posts.html',
+            templateUrl: 'templates/home.html',
             controller: 'postCtrl'
         })
         .state('add', {
