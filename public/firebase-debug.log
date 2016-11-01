@@ -1,14 +1,23 @@
 [debug] ----------------------------------------------------------------------
-[debug] Command:      /usr/bin/nodejs /usr/bin/firebase serve
+[debug] Command:      /usr/bin/nodejs /usr/bin/firebase deploy
 [debug] CLI Version:  3.0.7
 [debug] Platform:     linux
 [debug] Node Version: v4.4.7
-[debug] Time:         Wed Oct 12 2016 01:36:13 GMT+0530 (IST)
+[debug] Time:         Tue Nov 01 2016 18:30:27 GMT+0530 (IST)
 [debug] ----------------------------------------------------------------------
 [debug] 
-[info] Starting Firebase development server...
+[debug] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase"]
+[debug] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token
+[debug] <<< HTTP RESPONSE 200
+[debug] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/cognizance-dc325 
+[debug] <<< HTTP RESPONSE 200
+[debug] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/cognizance-dc325/tokens 
+[debug] <<< HTTP RESPONSE 200
 [info] 
-[info] Project Directory: /media/shashwat/Data/coding/codebase/Angular-Projects/Cogniznace-website
-[info] Public Directory: public
+[info] === Deploying to 'cognizance-dc325'...
 [info] 
-[info] Server listening at: http://localhost:5000
+[info] i  deploying database, hosting
+[info] ✔  database: rules ready to deploy.
+[info] i  hosting: preparing public directory for upload...
+[debug] >>> HTTP REQUEST PUT https://deploy.firebase.com/v1/hosting/cognizance-dc325/uploads/-KVUyXCHsdDf-AOIt0SG?fileCount=680&message= 

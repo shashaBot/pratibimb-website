@@ -6,7 +6,8 @@ var app = angular.module('CogniApp',
   'CogniApp.controllers',
   'jcs-autoValidate',
   'textAngular',
-  'wu.masonry']);
+  'wu.masonry',
+  'angularUtils.directives.dirDisqus']);
 // crossdomain loading iframes
 app.config(function($sceDelegateProvider) {
     $sceDelegateProvider.resourceUrlWhitelist([
