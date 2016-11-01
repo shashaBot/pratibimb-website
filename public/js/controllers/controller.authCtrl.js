@@ -9,11 +9,14 @@ app.controller('authCtrl', function($scope, authService, $state, $rootScope ) {
         console.log(user);
         if(user){
           //show some notification of success
+          console.log('auth success');
           $state.go('home');
         }
         else{
           //authentication failed!
+          console.log('auth failure');
           $state.reload();
+
         }
       });
     }
@@ -26,14 +29,7 @@ app.controller('authCtrl', function($scope, authService, $state, $rootScope ) {
   $scope.signOut = function() {
     authService.signOut().then(function() {
       console.log("signed out!");
-      //reloading state is not working...look into this or have it looked upon by someone
-      if($state.current === 'home'){
-        console.log('already at home');
-        $state.reload();
-      }
-      else{
-        $state.go('home');
-      }
+      $state.reload();
     });
   };
 });

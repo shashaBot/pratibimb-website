@@ -1,4 +1,53 @@
-.cogni-logo .cogni-logo-image{
-  height: 75px;
+/*.logo .logo-image{
+  height: 70px;
   width: 100px;
+}*/
+.logo-container .logo{
+  border-radius: 0% !important;
+  border: 0px;
+  /*width: 100px;*/
+}
+#navbar-top-banner{
+  position: absolute;
+  width: 100%;
+  top: 0px;
+  left: 0px;
+  z-index: 10;
+}
+#cogniCarousel{
+  width: inherit;
+  /*top: 0px;
+  left: 0px;
+  right: 0px;*/
+  z-index: 0;
+}
+.carousel-inner{
+  background-color: #D5F8DF;
+}
+.main-content{
+  position: relative;
+  margin-top: 100px;
+  /*margin-left: 12% !important;
+  margin-right: auto !important;*/
+  display: block;
+  z-index: 0;
+}
+
+/*.custom-navbar{
+  opacity: 0.7;
+}*/
+.input-group{
+  padding: 15px;
+}
+.follow-input{
+  height: 60px !important;
+  font-size: 25px;
+  text-align: center;
+}
+.container-fluid{
+  padding: 0px !important;
+}
+.register-background{
+  left: 0px;
+  top:0px;
 }

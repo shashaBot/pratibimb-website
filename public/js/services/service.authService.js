@@ -8,8 +8,8 @@ app.service('authService', function($q) {
     self.adminLogin = function(userObj){
       return auth.signInWithEmailAndPassword(userObj.email, userObj.password)
       .catch(function(error){
-        console.log("There was an error loggin in : ", error.code, ": ", error.message);
-        
+        alert("There was an error loggin in : ", error.code, ": ", error.message);
+
       });
     };
 

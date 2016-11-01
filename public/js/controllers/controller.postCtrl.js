@@ -15,26 +15,44 @@ app.controller('postCtrl', function($scope, postService, $rootScope, $anchorScro
 
     $scope.load = function() {
         $scope.loading = true;
+        $scope.showLoadMore = false;
         postService.load().then(function(data) {
             if(data){
               $scope.posts = data;
             }
+            else{
+              //no posts to display
+            }
             $scope.loading = false;
+            $scope.showLoadMore = true;
+        }, function(){
+          //loading failure error message
+          $scope.showLoadMore = true;
         });
     };
 
 
-
+    $scope.showLoadMore= true;
     $scope.loadMore = function() {
-
+      console.log('loadMore called');
         if (!$scope.loading) {
-            if(!postService.hasMore)
+            if(!postService.hasMore){
+              $scope.showLoadMore = false;
               $scope.loading = false;
+            }
             else{
               $scope.loading = true;
               postService.loadMore().then(function(data){
                 if(data){
+                  if(data!==$scope.posts)
                   $scope.posts = data;
+                  else{
+                    //notification of no more data
+                    $scope.showLoadMore = false;
+                  }
+                }
+                else{
+                  //no data received, error
                 }
                 $scope.loading = false;
               });
@@ -43,4 +61,17 @@ app.controller('postCtrl', function($scope, postService, $rootScope, $anchorScro
     };
 
     $scope.load();
+});
+
+
+
+$(document).ready(function($) {
+
+	$('.card__share > a').on('click', function(e){
+		e.preventDefault() // prevent default action - hash doesn't appear in url
+		console.log('found .card__share', this);
+   		$(this).parent().find( 'div' ).toggleClass( 'card__social--active' );
+		$(this).toggleClass('share-expanded');
+    });
+
 });

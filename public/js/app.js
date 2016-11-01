@@ -5,8 +5,8 @@ var app = angular.module('CogniApp',
   'CogniApp.services',
   'CogniApp.controllers',
   'jcs-autoValidate',
-  'textAngular'
-]);
+  'textAngular',
+  'wu.masonry']);
 // crossdomain loading iframes
 app.config(function($sceDelegateProvider) {
     $sceDelegateProvider.resourceUrlWhitelist([
@@ -33,9 +33,9 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
             }
         })
         .state('read', {
-            url: '/read/:id/',
-            templateUrl: 'templates/read.html',
-            controller: 'readCtrl'
+          url: '/read/:id',
+          templateUrl: 'templates/read.html',
+          controller: 'readCtrl'
         })
         .state('followers', {
             url: '/followers',
@@ -57,7 +57,7 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
           controller: 'aboutCtrl'
         });
 
-    $urlRouterProvider.otherwise('/');
+    $urlRouterProvider.otherwise('/read/blah');
     $locationProvider.html5Mode(true);
 });
 
@@ -67,10 +67,12 @@ app.run(function($rootScope, $state){
     if(user){
       console.log('user is signed in', user);
       $rootScope.user = user;
+      //show notification of user logged in
     }
     else{
       $rootScope.user = null;
       console.log('user is signed out');
+      //show notification of user signed out
     }
   });
 
@@ -90,5 +92,25 @@ app.run(function($rootScope, $state){
     }
   });
 
-
 });
+
+
+// app.run(function(postService, $rootScope){
+//   $rootScope.pageLoaded = false;
+//   window.onload = function(){
+//     alert('pageloaded');
+//     $rootScope.$watch('postService.posts', function(){
+//       $rootScope.pageLoaded = checkPostsLoaded();
+//       console.log($rootScope.pageLoaded);
+//     }, 100);
+//   };
+// });
+//
+// var checkPostsLoaded = function (posts){
+//   if(posts){
+//     return true;
+//   }
+//   else{
+//     return false;
+//   }
+// };

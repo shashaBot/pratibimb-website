@@ -1,19 +1,16 @@
 var app = angular.module('controller.addPostCtrl', []);
 
-app.controller('addPostCtrl', function($scope){
-  $('.datepicker').datepicker({
-
-              weekStart:1,
-
-              color: 'orange'
-
-     });
-  $scope.writeNewPost = function(newPost, formIsValid){
+app.controller('addPostCtrl', function($scope, postService, $state){
+  $scope.newPost = {};
+  $scope.writeNewPost = function(formIsValid){
    if(formIsValid){
      console.log("writing New Post");
-     postService.writeNewPost(newPost.title, newPost.body, newPost.type, newPost.imageUrl, newPost.magLink, newPost.issue).then(function(){
+     //anglular ladda calls
+     return postService.newMagazinePost($scope.newPost.title, $scope.newPost.body, $scope.newPost.issue, $scope.newPost.imageUrl, $scope.newPost.magLink).then(function(){
+       console.log("written to database");
+       //ladda calls
        $state.reload();
-       $scope.newPost = {};
+       //show notification
      });
    }
 

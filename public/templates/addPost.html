@@ -1,48 +1,81 @@
-<div class="row">
-	<div class="col-md-8 col-md-offset-2">
-		<div class="panel panel-default">
-			<div class="panel-heading"><h3 style="text-align:center;">Add Post</h3></div>
+<div class="section landing-section section-with space">
+<div class="container">
+	<div class="row">
+		<div class="col-md-8 col-md-offset-2">
+			<div class="tim-title"><h3 class="text-center">Add Post</h3></div>
 
-				<form name="addPostForm" role="form" ng-submit="writeNewPost(newPost, addPostForm.$valid)" novalidate="novalidate">
-					<div class="panel-body">
-						<div class="form-group">
+				<form name="addPostForm" role="form" ng-submit="writeNewPost(addPostForm.$valid)" novalidate="novalidate">
+					<div class="row">
+						<div class="col-md-12">
 							<label for="post_title">Post Title</label>
 							<input type="text" placeholder="New Issue Maybe" id="post_title" ng-model="newPost.title" class="form-control" ng-required="true" />
 						</div>
-						<div class="form-group">
-							<label for="post_content">Post Content:</label>
-							<textarea ng-model="newPost.body" id="post_content" class="form-control" ></textarea>
-						</div>
-						<div class="form-group">
-							<label for="issueDate">Issue:</label>
-    					<input class="datepicker form-control" min="2013-01-01" ng-model="newPost.issue" ng-required="true"/>
-						</div>
-						<div class="form-group">
-							<!-- upload image ng-file-upload maybe-->
-							<label for="imageUrl">Image URL: </label>
-							<input type="url" id="imageUrl" class="form-control" ng-model="post.imageUrl">
-						</div>
-						<label class="control-label"> Post Type:
-						<label class="radio">
-							<input type="radio" name="postOptions" data-toggle="radio" id="optionsRadios1" value="postType">
-							<i></i>Magazine
-						</label>
-						<label class="radio">
-							<input type="radio" name="postOptions" data-toggle="radio" id="optionsRadios2" value="postType" checked>
-							<i></i>Blog
-						</label>
-
-
-						</div>
-						<div class="form-group">
-							<label for="mag_link">Link:</label>
-							<input type="url" id="mag_link" ng-model="newPost.magLink" class="form-control" ng-required="true"/>
-						</div>
-
 					</div>
-					<div class="panel-footer">
+					<div class="row">
+						<div class="col-md-12">
+							<label for="post_content">Post Content:</label>
+							<textarea ng-model="newPost.body" id="post_content" placeholder="Add the body of post here..." class="form-control" rows="3"></textarea>
+						</div>
+					</div>
+						<!-- <div class="form-group">
+							Post Type:
+							<div class="radio">
+							  <label><input type="radio" name="optradio" value="magazine" ng-model="newPost.type"><i></i>Magazine</label>
+							</div>
+							<div class="radio">
+							  <label><input type="radio" name="optradio" value="blog" ng-model="newPost.type"><i></i>Blog</label>
+							</div>
 
-						<div class="form-group">
+							<div class="radio">
+								<label >
+									<input type="radio" name="postOptions" data-toggle="radio" id="postTypeRadios1" value="magazine" ng-model="newPost.type" checked="true">
+									<i></i>Magazine
+								</label>
+							</div>
+							<div class="radio">
+								<label >
+									<input type="radio" name="postOptions" data-toggle="radio" id="postTypeRadios2" value="blog"  ng-model="newPost.type">
+									<i></i>Blog
+								</label>
+							</div>
+							<pre>{{newPost}}</pre>
+						</div> -->
+						<!--Was trying to use select input of paperkit  -->
+						<!-- <button type="button" class="btn dropdown-toggle no-style form-control" data-toggle="dropdown" title="Choose Month" aria-expanded="false">
+							<span class="filter-option pull-left">Choose Month</span>
+							"nbsp;"
+							<span class="bs-caret">
+								<span class="caret"></span>
+							</span>
+						</button>
+						<div class="dropdown-menu open" style="max-height: 288px; overflow: hidden; min-height: 125px;" -->
+						<div class="row">
+							<div class="col-md-12">
+								<label for="issueMonth">Issue:</label><br>
+								<input type="month" ng-model="newPost.issue"></input>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-12">
+								<!-- upload image ng-file-upload maybe-->
+								<label for="imageUrl">Image URL: </label>
+								<span><input type="file" id="imageUrl" class="form-control" ng-model="newPost.imageUrl"></span>
+								<span><button class="btn btn-simple btn-success">Upload</button></span>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-md-12">
+								<label for="mag_link">Magazine Link:</label>
+								<input type="url" id="mag_link" ng-model="newPost.magLink" class="form-control" ng-required="true"/>
+							</div>
+						</div>
+
+
+
+					<div class="row">
+
+						<div class="col-md-12">
 
 				            <div class="btn-group btn-group-justified">
 				                <div class="btn-group">
@@ -58,4 +91,5 @@
 				</form>
 		</div>
 	</div>
+</div>
 </div>
