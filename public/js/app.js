@@ -58,7 +58,7 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
           controller: 'aboutCtrl'
         });
 
-    $urlRouterProvider.otherwise('/read/blah');
+    $urlRouterProvider.otherwise('/');
     $locationProvider.html5Mode(true);
 });
 
