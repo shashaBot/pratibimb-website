@@ -58,13 +58,13 @@
 </div>
 <br>
 </div>
-<div class="section section-dark-blue" align="center">
+<div class="section section-dark-blue" align="center" ng-controller="followCtrl">
   <h2>Never miss an Issue.<br/>
     <p>Enter your email below and we will send the link to your mailbox each month.</p>
   </h2>
   <div class="input-group text-center">
     <span class="input-group-addon"><i class="fa fa-envelope fa-2x"></i></span>
-    <input type="email" placeholder="you@example.com" class="form-control follow-input">
+    <input type="email" name="email-input" placeholder="you@example.com" class="form-control follow-input" ng-model="followerEmail">
   </div>
 </div>
 <div class="section section-white landing-section text-center">
