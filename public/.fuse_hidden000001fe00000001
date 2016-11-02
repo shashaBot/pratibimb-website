@@ -70,8 +70,7 @@
     <script src="js\controllers\controller.addPostCtrl.js"></script>
     <script src="js\controllers\controller.followCtrl.js"></script>
     <script src="js\controllers\controller.authCtrl.js"></script>
-<!-- back to top js -->
-    <script src="js/back-top.js"></script>
+
 <!-- css files -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="libs\font-awesome\css\font-awesome.min.css">
@@ -84,8 +83,6 @@
     <link rel="stylesheet" type="text/css" href="libs/ct-paper-theme/assets/css/examples.css">
     <link rel="stylesheet" href="css/bookshelf.css">
     <link rel="stylesheet" type="text/css" href="css\style.css">
-    <link rel="stylesheet" type="text/css" href="css/back-top.css">
-
 
 <!-- title -->
     <title>Cognizance | The BVPIEEE E-Newsletter</title>
@@ -171,9 +168,6 @@
         </div>
       </div>
     </footer>
-    <div ng-controller="postCtrl">
-      <button class="goToTop btn btn-neutral btn-fill" ng-click="backToTop();" style="display:none;background-color:white"><i class="fa fa-chevron-up"></i>top</button>
-    </div>
   </div>
   </body>
 </html>

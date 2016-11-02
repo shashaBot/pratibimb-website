@@ -58,6 +58,12 @@ app.controller('postCtrl', function($scope, postService, $rootScope, $anchorScro
     $scope.load();
 
 
+    //back to top button function
+    $scope.backToTop = function (){
+        console.log('back to top called');
+        $("html, body").animate({ scrollTop: 0 }, 1000);
+    };
+});
 
     $(document).ready(function($) {
 
@@ -70,5 +76,5 @@ app.controller('postCtrl', function($scope, postService, $rootScope, $anchorScro
 
     });
 
-    
+
 });
