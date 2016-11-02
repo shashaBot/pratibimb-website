@@ -95,9 +95,9 @@ app.factory('postService', function($state, $stateParams, $q) {
 
     };
 
-    self.findPostKey = function(post){
+    var findPostKey = function(postDate){
       for (var key in self.posts) {
-          if (self.posts[key].date === post.date) {
+          if (self.posts[key].date === postDate) {
               return key;
           }
       }
@@ -120,9 +120,11 @@ app.factory('postService', function($state, $stateParams, $q) {
       return ordered;
     };
 
-    self.selectPost = function(inputPost) {
-        self.selectedPost = inputPost;
+    self.selectPost = function(postDate) {
+        var selectPostKey = findPostKey(postDate);
+        self.selectedPost = self.posts[selectPostKey];
         return self.selectedPost;
+      
     };
 
     return self;

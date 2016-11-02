@@ -1,4 +1,4 @@
-<div class="container tim-container">
+<div class="container tim-container" ng-show="!loading">
   <div class="row">
     <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-1 col-xs-12">
         <div class="card radius shadowDepth1">
@@ -30,4 +30,7 @@
           </div>
       </div>
   </div> -->
+</div>
+<div ng-show="loading">
+  <p>Loading...</p>
 </div>

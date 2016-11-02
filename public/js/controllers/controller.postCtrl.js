@@ -2,11 +2,7 @@ var app = angular.module('controller.postCtrl', []);
 
 app.controller('postCtrl', function($scope, postService, $rootScope, $anchorScroll, $location, authService, $state) {
 
-    $scope.selectPost = function(post) {
-    	$scope.selectedPost = postService.selectPost(post);
-    };
     $scope.goToComments = function(post){
-      $scope.selectPost(post);
       //path to comments of the selectedPost
       //..use smoothScroll maybe...
     };
@@ -59,19 +55,20 @@ app.controller('postCtrl', function($scope, postService, $rootScope, $anchorScro
             }
         }
     };
-
     $scope.load();
-});
 
 
 
-$(document).ready(function($) {
+    $(document).ready(function($) {
 
-	$('.card__share > a').on('click', function(e){
-		e.preventDefault() // prevent default action - hash doesn't appear in url
-		console.log('found .card__share', this);
-   		$(this).parent().find( 'div' ).toggleClass( 'card__social--active' );
-		$(this).toggleClass('share-expanded');
+      $('.card__share > a').on('click', function(e){
+        e.preventDefault() // prevent default action - hash doesn't appear in url
+        console.log('found .card__share', this);
+        $(this).parent().find( 'div' ).toggleClass( 'card__social--active' );
+        $(this).toggleClass('share-expanded');
+      });
+
     });
 
+    
 });

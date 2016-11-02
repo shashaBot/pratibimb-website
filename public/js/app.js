@@ -57,8 +57,7 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
           controller: 'aboutCtrl'
         });
 
-    $urlRouterProvider.otherwise('/read/blah');
-    $locationProvider.html5Mode(true);
+    $urlRouterProvider.otherwise('/');
 });
 
 app.run(function($rootScope, $state){

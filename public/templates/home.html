@@ -10,15 +10,15 @@
       <div class="item"><img class="carousel-image" src="img/cogni-website-images2.jpg"></div>
       <div class="item"><img class="carousel-image" src="img/cogni-website-images3.jpg"></div>
     </div>
-    <a class="left carousel-control" href="#carousel-cognizance-presentation" data-slide="prev">
+    <a class="left carousel-control" data-target="#carousel-cognizance-presentation" data-slide="prev">
       <span class="fa fa-angle-left"></span>
     </a>
-    <a class="right carousel-control" href="#carousel-cognizance-presentation" data-slide="next">
+    <a class="right carousel-control" data-target="#carousel-cognizance-presentation" data-slide="next">
       <span class="fa fa-angle-right"></span>
     </a>
   </div>
 </div>
-<div class="section section-nude section-with-space">
+<div class="section section-nude section-with-space" ng-show="!loading">
 <masonry column-width="200" reload-on-resize preserve-order class="container main-content">
 <div class="masonry-brick" ng-repeat="post in posts" style="width:350px;">
   <div class="card radius shadowDepth1">
@@ -43,7 +43,7 @@
         <span><i class="fa fa-calendar" aria-hidden="true"></i></span><time>{{post.issue}}</time>
       </div>
 
-      <article class="card__article" ng-click="selectPost(post)">
+      <article class="card__article">
         <a ui-sref="read({id:post.date})"><h2>{{post.title}}</h2></a>
 
         <p class="post-body" ng-init="post.body=((post.body).length>500? post.body.substr(0,400)+'...': post.body)">{{post.body}}</p>
@@ -57,6 +57,9 @@
   <button class="btn btn-warning btn-lg btn-fill" ng-click="loadMore();" ng-show="showLoadMore">Older</button>
 </div>
 <br>
+</div>
+<div ng-show="loading">
+  <p class="text-center">Loading...</p>
 </div>
 <div class="section section-dark-blue" align="center">
   <h2>Never miss an Issue.<br/>
