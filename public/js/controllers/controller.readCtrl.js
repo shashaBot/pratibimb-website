@@ -1,6 +1,6 @@
 var app = angular.module('controller.readCtrl', []);
 
-app.controller('readCtrl', function($scope, postService, $stateParams){
+app.controller('readCtrl', function($scope, postService, $stateParams, $location){
   $scope.loading = false;
   if(!postService.posts){
     $scope.loading = true;
