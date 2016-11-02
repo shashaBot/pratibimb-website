@@ -40,8 +40,8 @@ app.controller('postCtrl', function($scope, postService, $rootScope, $anchorScro
               $scope.loading = true;
               postService.loadMore().then(function(data){
                 if(data){
-                  if(data!==$scope.posts)
-                  $scope.posts = data;
+                  if(JSON.stringify(data)!==JSON.stringify($scope.posts))
+                    $scope.posts = data;
                   else{
                     //notification of no more data
                     $scope.showLoadMore = false;
@@ -63,7 +63,6 @@ app.controller('postCtrl', function($scope, postService, $rootScope, $anchorScro
         console.log('back to top called');
         $("html, body").animate({ scrollTop: 0 }, 1000);
     };
-});
 
     $(document).ready(function($) {
 

@@ -166,26 +166,19 @@
                         </a>
                     </li>
                     <li>
-                        <a ng-href="#/about-us">
+                        <a ui-sref="about-us">
                            Meet the team
                         </a>
                     </li>
                     <li>
                         <a href="#feedback-modal">
-                            Feedback
+                            feedback
                         </a>
                     </li>
                 </ul>
             </nav>
-            <div class="pull-right">
-              <div class="social-icons">
-                <a href="https://www.facebook.com/bvpcognizance" class="btn btn-simple"><i class="fa fa-facebook"></i></a>
-                <a href="https://www.twitter.com" class="btn btn-simple"><i class="fa fa-google-plus-official"></i></a>
-                <a href="https://plus.google.com" class="btn btn-simple"><i class="fa fa-twitter"></i></a>
-              </div>
-            </div>
             <div class="copyright pull-right">
-                © 2016, conjured by <i class="fa fa-users"></i> Congizance Team
+                © 2015, made with <i class="fa fa-heart heart"></i> by Creative Tim
             </div>
         </div>
     </footer>
