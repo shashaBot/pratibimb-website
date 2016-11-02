@@ -19,45 +19,54 @@
   </div>
 </div>
 <div class="section section-nude">
-<masonry column-width="200" reload-on-resize preserve-order class="container main-content">
-<div class="masonry-brick" ng-repeat="post in posts" style="width:350px;">
-  <div class="card radius shadowDepth1">
-    <div class="card__image border-tlr-radius">
-      <img ng-src="{{post.imageUrl}}" alt="image" class="border-tlr-radius">
-    </div>
+  <div class="container main-content">
+    <div class="row">
+      <div class="col-md-10 col-md-offset-1 col-sm-12 col-xs-12">
+        <div masonry reload-on-resize preserve-order>
+          <div class="row">
+            <div class="masonry-brick col-md-4 col-sm-6 col-xs-12" ng-repeat="post in posts">
+              <div class="card radius shadowDepth1">
+                <div class="card__image border-tlr-radius">
+                  <img ng-src="{{post.imageUrl}}" alt="image" class="border-tlr-radius">
+                </div>
 
-    <div class="card__content card__padding">
-      <div class="card__share">
-        <div class="card__social">
-          <!-- provide for the functionality of these social buttons -->
-          <a class="share-icon facebook" href="#"><span class="fa fa-facebook"></span></a>
-          <a class="share-icon twitter" href="#"><span class="fa fa-twitter"></span></a>
-          <a class="share-icon googleplus" href="#"><span class="fa fa-google-plus"></span></a>
+                <div class="card__content card__padding">
+                  <div class="card__share">
+                    <div class="card__social">
+                      <!-- provide for the functionality of these social buttons -->
+                      <a class="share-icon facebook" href="#"><span class="fa fa-facebook"></span></a>
+                      <a class="share-icon twitter" href="#"><span class="fa fa-twitter"></span></a>
+                      <a class="share-icon googleplus" href="#"><span class="fa fa-google-plus"></span></a>
+                    </div>
+
+                    <a id="share" class="share-toggle share-icon" href="#"></a>
+                  </div>
+
+                  <div class="card__meta">
+                    <a href="#">{{post.theme}}</a>
+                    <span><i class="fa fa-calendar" aria-hidden="true"></i></span><time>{{post.issue}}</time>
+                  </div>
+
+                  <article class="card__article">
+                    <a ui-sref="read({id:post.date})"><h2>{{post.title}}</h2></a>
+
+                    <p class="post-body" ng-init="post.body=((post.body).length>500? post.body.substr(0,400)+'...': post.body)">{{post.body}}</p>
+                  </article>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-
-        <a id="share" class="share-toggle share-icon" href="#"></a>
       </div>
-
-      <div class="card__meta">
-        <a href="#">{{post.theme}}</a>
-        <span><i class="fa fa-calendar" aria-hidden="true"></i></span><time>{{post.issue}}</time>
-      </div>
-
-      <article class="card__article">
-        <a ui-sref="read({id:post.date})"><h2>{{post.title}}</h2></a>
-
-        <p class="post-body" ng-init="post.body=((post.body).length>500? post.body.substr(0,400)+'...': post.body)">{{post.body}}</p>
-      </article>
     </div>
   </div>
+  <br>
+  <div class="container tim-container text-center">
+    <button class="btn btn-warning btn-lg btn-fill" ng-click="loadMore();" ng-show="showLoadMore">Older</button>
+  </div>
+  <br>
 </div>
-</masonry>
-<br>
-<div class="container tim-container text-center">
-  <button class="btn btn-warning btn-lg btn-fill" ng-click="loadMore();" ng-show="showLoadMore">Older</button>
-</div>
-<br>
-</div>
+
 <div ng-show="loading">
   <p class="text-center">Loading...</p>
 </div>
