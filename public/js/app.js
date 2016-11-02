@@ -40,7 +40,7 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
         })
         .state('followers', {
             url: '/followers',
-            templateUrl: 'templates/followers.html',
+            templateUrl: 'templates/follow.html',
             controller: 'followCtrl',
             data: {
               needAdmin: true

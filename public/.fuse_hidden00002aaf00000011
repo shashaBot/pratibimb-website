@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang ="en" ng-app="CogniApp">
+  <head >
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- masonry and jquery -->
+    <script src="libs/jquery/dist/jquery.js"></script>
+    <script src="libs/jquery-bridget/jquery-bridget.js"></script>
+    <script src="libs/ev-emitter/ev-emitter.js"></script>
+    <script src="libs/desandro-matches-selector/matches-selector.js"></script>
+    <script src="libs/fizzy-ui-utils/utils.js"></script>
+    <script src="libs/get-size/get-size.js"></script>
+    <script src="libs/outlayer/item.js"></script>
+    <script src="libs/outlayer/outlayer.js"></script>
+    <script src="libs/masonry/masonry.js"></script>
+    <script src="libs/imagesloaded/imagesloaded.js"></script>
+    <script src="libs/angular/angular.js"></script>
+    <script src="libs/angular-masonry/angular-masonry.js"></script>
+    <!-- angularfire -->
+    <script src="https://cdn.firebase.com/libs/angularfire/1.2.0/angularfire.min.js"></script>
+
+    <!-- firebase sdk-->
+    <script src="https://www.gstatic.com/firebasejs/3.4.1/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyA8ELpAUo7zv_71s21_tdAnQGOTcMhVf90",
+        authDomain: "cognizance-dc325.firebaseapp.com",
+        databaseURL: "https://cognizance-dc325.firebaseio.com",
+        storageBucket: "cognizance-dc325.appspot.com",
+        messagingSenderId: "205765250202"
+      };
+      firebase.initializeApp(config);
+    </script>
+
+
+
+<!-- bootstrap js -->
+    <script src="libs/ct-paper-theme/bootstrap3/js/bootstrap.min.js"></script>
+<!-- jcs-auto-validate -->
+    <script src="libs\angular-auto-validate\dist\jcs-auto-validate.min.js"></script>
+
+<!-- angular-ui-router -->
+    <script src="libs\angular-ui-router\release\angular-ui-router.min.js"></script>
+<!-- ct-paper js -->
+<!--  Plugins -->
+    <script src="libs/ct-paper-theme/assets/js/ct-paper-checkbox.js"></script>
+    <script src="libs/ct-paper-theme/assets/js/ct-paper-radio.js"></script>
+    <script src="libs/ct-paper-theme/assets/js/bootstrap-select.js"></script>
+    <script src="libs/ct-paper-theme/assets/js/bootstrap-datepicker.js"></script>
+    <script src="js\ct-paper.js"></script>
+<!--textAngular files go here-->
+    <link rel='stylesheet' href='libs/textAngular/dist/textAngular.css'>
+    <script src='libs/textAngular/dist/textAngular-rangy.min.js'></script>
+    <script src='libs/textAngular/dist/textAngular-sanitize.min.js'></script>
+    <script src='libs/textAngular/dist/textAngular.min.js'></script>
+<!-- ng-file-upload js -->
+    <script src="libs/ng-file-upload/ng-file-upload.min.js"></script>
+
+<!-- main javascript files -->
+    <script src="js\app.js"></script>
+    <script src="js\services.js"></script>
+    <script src="js\services\service.authService.js"></script>
+    <script src="js\services\service.postService.js"></script>
+    <script src="js\services\service.followService.js"></script>
+    <script src="js\controllers.js"></script>
+    <script src="js\controllers\controller.postCtrl.js"></script>
+    <script src="js\controllers\controller.readCtrl.js"></script>
+    <script src="js\controllers\controller.addPostCtrl.js"></script>
+    <script src="js\controllers\controller.followCtrl.js"></script>
+    <script src="js\controllers\controller.authCtrl.js"></script>
+<!-- back to top js -->
+    <script src="js/back-top.js"></script>
+<!-- css files -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="libs\font-awesome\css\font-awesome.min.css">
+    <link href="libs/ct-paper-theme/assets/css/demo.css" rel="stylesheet" />
+    <link href="libs/ct-paper-theme/assets/css/examples.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/post-card.css" >
+
+    <link rel="stylesheet" type="text/css" href="libs/ct-paper-theme/assets/css/ct-paper.css">
+    <link rel="stylesheet" type="text/css" href="libs/ct-paper-theme/assets/css/demo.css">
+    <link rel="stylesheet" type="text/css" href="libs/ct-paper-theme/assets/css/examples.css">
+    <link rel="stylesheet" href="css/bookshelf.css">
+    <link rel="stylesheet" type="text/css" href="css\style.css">
+    <link rel="stylesheet" type="text/css" href="css/back-top.css">
+
+
+<!-- title -->
+    <title>Cognizance | The BVPIEEE E-Newsletter</title>
+  </head>
+  <body>
+    <div class="container-fluid" id="bookshelfBack" ng-show="false">
+    <div class="bookshelf_wrapper" >
+      <ul class="books_list">
+        <li class="book_item first"></li>
+        <li class="book_item second"></li>
+        <li class="book_item third"></li>
+        <li class="book_item fourth"></li>
+        <li class="book_item fifth"></li>
+        <li class="book_item sixth"></li>
+      </ul>
+      <div class="shelf"></div>
+    </div>
+  </div>
+  <div ng-show="true">
+    <nav class="navbar navbar-ct-transparent" role="navigation" id="navbar-top-banner" ng-cloak>
+      <div class="container-fluid" ng-controller="authCtrl">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#banner-navigation" >
+            <span class="sr-only"> Toggle navigation </span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a href="/">
+            <div class="logo-container">
+              <div class="logo">
+                <img class="logo-image" alt="Cognizance Logo" src="../img/Cognizance.png" alt="Cognizance Logo">
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="collapse navbar-collapse" id="banner-navigation">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+              <button class="btn btn-fill dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" ng-show="user">
+                Admin
+                <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                <li role="presentation"><a role="menuitem" tabindex="-1" ui-sref="add">Add Post</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Edit Post</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Delete Post</a></li>
+                <li role="presentation" class="divider"></li>
+                <li role="presentation" ng-click="signOut()"><a role="menuitem" tabindex="-1" href="#" >Sign Out</a></li>
+              </ul>
+            </li>
+           </li>
+            <li><button class="btn btn-primary btn-simple" ui-sref="about">Who Are We?</button></li>
+            <!-- open up a modal to like us on facebook and follow on twitter -->
+            <li><button class="btn btn-primary btn-simple">Follow us</button></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- home page -->
+    <base href="/">
+    <div class="container-fluid">
+      <div ui-view></div>
+    </div>
+    <footer class="footer-demo section-dark">
+      <div class="container">
+        <nav class="pull-left">
+          <ul class="list-unstyled">
+            <li>
+              <a href="#">Cognizance: The BVPIEEE-HKN e-newsletter</a>
+            </li>
+            <li>
+              <ul class="list-unstyled">
+                <li><a href="facebook-page-link"><i class="fa fa-facebook-f"></i> facebook</a></li><br>
+                <li><a href="facebook-page-link"><i class="fa fa-twitter"></i> twitter</a></li><br>
+                <li><a href="facebook-page-link"><i class="fa fa-google-plus-official"></i> google+</a></li><br>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+        <div class="copyright pull-right">
+          © 2016, conjured by <i class="fa fa-users"></i> Cognizance Team
+        </div>
+      </div>
+    </footer>
+    <div ng-controller="postCtrl">
+      <button class="goToTop btn btn-neutral btn-fill" ng-click="backToTop();" style="display:none;background-color:white"><i class="fa fa-chevron-up"></i>top</button>
+    </div>
+  </div>
+  </body>
+</html>
