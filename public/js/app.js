@@ -6,7 +6,8 @@ var app = angular.module('CogniApp',
   'CogniApp.controllers',
   'jcs-autoValidate',
   'textAngular',
-  'wu.masonry']);
+  'wu.masonry',
+  'angularUtils.directives.dirDisqus']);
 // crossdomain loading iframes
 app.config(function($sceDelegateProvider) {
     $sceDelegateProvider.resourceUrlWhitelist([
@@ -92,24 +93,3 @@ app.run(function($rootScope, $state){
   });
 
 });
-
-
-// app.run(function(postService, $rootScope){
-//   $rootScope.pageLoaded = false;
-//   window.onload = function(){
-//     alert('pageloaded');
-//     $rootScope.$watch('postService.posts', function(){
-//       $rootScope.pageLoaded = checkPostsLoaded();
-//       console.log($rootScope.pageLoaded);
-//     }, 100);
-//   };
-// });
-//
-// var checkPostsLoaded = function (posts){
-//   if(posts){
-//     return true;
-//   }
-//   else{
-//     return false;
-//   }
-// };
