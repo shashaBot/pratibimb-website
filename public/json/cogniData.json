@@ -1,9 +1,12 @@
 {
   "owl" : [
-    {"item" : "<div class='item'><img class='lazyOwl' alt='owl image' data-src='img/cogni-website-images1.jpg'><div class='teammate-data'><h5>Name</h5><small>position</small><br><p>description</p></div></div>"},
-    {"item" : "<div class='item'><img class='lazyOwl' alt='owl image' data-src='img/cogni-website-images1.jpg'><div class='teammate-data'><h5>Name</h5><small>position</small><br><p>description</p></div></div>"},
-    {"item" : "<div class='item'><img class='lazyOwl' alt='owl image' data-src='img/cogni-website-images1.jpg'><div class='teammate-data'><h5>Name</h5><small>position</small><br><p>description</p></div></div>"},
-    {"item" : "<div class='item'><img class='lazyOwl' alt='owl image' data-src='img/cogni-website-images1.jpg'><div class='teammate-data'><h5>Name</h5><small>position</small><br><p>description</p></div></div>"},
-    {"item" : "<div class='item'><img class='lazyOwl' alt='owl image' data-src='img/cogni-website-images1.jpg'><div class='teammate-data'><h5>Name</h5><small>position</small><br><p>description</p></div></div>"}
+    {"item" : "<div class='item'><img class='lazyOwl' alt='Team member photo' data-src='img/CogniTeamPhotos/DeepanshuKapoor.jpg'><div class='teammate-data'><h5>Deepanshu Kapoor</h5><small>Editor-in-chief</small><br><p>Creativity is an unfettered thing.It will spill into every possible realm.</p></div></div>"}
+    {"item" : "<div class='item'><img class='lazyOwl' alt='Team member photo' data-src='img/CogniTeamPhotos/KanikaSharma.jpg'><div class='teammate-data'><h5>Kanika Sharma</h5><small>Mentor, Editorial</small><br><p>description</p></div></div>"},
+    {"item" : "<div class='item'><img class='lazyOwl' alt='Team member photo' data-src='img/CogniTeamPhotos/ShashwatGulyani.JPG'><div class='teammate-data'><h5>Shashwat Gulyani</h5><small>Web Executive</small><br><p>description</p></div></div>"},
+    {"item" : "<div class='item'><img class='lazyOwl' alt='Team member photo' data-src='img/CogniTeamPhotos/ShivamBachhety.jpg'><div class='teammate-data'><h5>Shivam Bachhety</h5><small>Designer</small><br><p>Designer: Naah- Expert enough to create an illusion of colours</p></div></div>"},
+    {"item" : "<div class='item'><img class='lazyOwl' alt='Team member photo' data-src='img/CogniTeamPhotos/SaloniGupta.jpg'><div class='teammate-data'><h5>Saloni Gupta</h5><small>Proof Reader</small><br><p>Solivagant | lover of books | foodie | super clumsy | laugh at my own jokes |a bit crazy with a dash of sweetness</p></div></div>"},
+    {"item" : "<div class='item'><img class='lazyOwl' alt='Team member photo' data-src='img/CogniTeamPhotos/BhaviniBhatia.jpg'><div class='teammate-data'><h5>Bhavini Bhatia</h5><small>Publicity Executive</small><br><p>Live by my word,Blabbermouth,Friends call me Geet of Jab We Met,Shopaholic-(Dress to Impress),Fun Loving,Extrovert</p></div></div>"},
+    {"item" : "<div class='item'><img class='lazyOwl' alt='Team member photo' data-src='img/CogniTeamPhotos/RatulPal.jpg'><div class='teammate-data'><h5>Ratul Pal</h5><small>Design Head</small><br><p>Live by my word,Blabbermouth,Friends call me Geet of Jab We Met,Shopaholic-(Dress to Impress),Fun Loving,Extrovert</p></div></div>"},
+    {"item" : "<div class='item'><img class='lazyOwl' alt='Team member photo' data-src='img/CogniTeamPhotos/KritivasSharma.png'><div class='teammate-data'><h5>Kritvas Sharma</h5><small>Columnist</small><br><p>I am liable to start a violent spark with a silent thought.</p> <br><p class='pull-right'>-Eminem, 2014</p></div></div>"}
   ]
 }

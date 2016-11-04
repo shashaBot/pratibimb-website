@@ -9,7 +9,7 @@ app.controller('aboutCtrl', function($scope){
       itemsDesktop : [1199,3],
       itemsDesktopSmall : [979,3],
       lazyLoad: true,
-      jsonPath : "json/cogniData.json"
+      jsonPath : "json/cogniData1.json"
     });
 
   });

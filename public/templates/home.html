@@ -18,29 +18,20 @@
     </a>
   </div>
 </div>
-<div class="section section-nude">
+<div class="section section-nude landing-section">
   <div class="container main-content">
     <div class="row">
       <div class="col-md-10 col-md-offset-1 col-sm-12 col-xs-12">
         <div masonry reload-on-resize preserve-order>
           <div class="row">
             <div class="masonry-brick col-md-4 col-sm-6 col-xs-12" ng-repeat="post in posts">
-              <div class="card radius shadowDepth1">
+              <div class="card radius shadowDepth1 noshadow">
                 <div class="card__image border-tlr-radius">
-                  <img ng-src="{{post.imageUrl}}" alt="image" class="border-tlr-radius">
+                  <img ng-src="{{post.imageUrl}}" alt="image" class="img-rounded img-responsive">
                 </div>
 
                 <div class="card__content card__padding">
-                  <div class="card__share">
-                    <div class="card__social">
-                      <!-- provide for the functionality of these social buttons -->
-                      <a class="share-icon facebook" href="#"><span class="fa fa-facebook"></span></a>
-                      <a class="share-icon twitter" href="#"><span class="fa fa-twitter"></span></a>
-                      <a class="share-icon googleplus" href="#"><span class="fa fa-google-plus"></span></a>
-                    </div>
 
-                    <a id="share" class="share-toggle share-icon" href="#"></a>
-                  </div>
 
                   <div class="card__meta">
                     <a href="#">{{post.theme}}</a>
@@ -62,13 +53,9 @@
   </div>
   <br>
   <div class="container tim-container text-center">
-    <button class="btn btn-warning btn-lg btn-fill" ng-click="loadMore();" ng-show="showLoadMore">Older</button>
+    <button class="btn btn-warning btn-lg btn-fill" ng-click="loadMore();" ng-show="showLoadMore" ng-disabled="loading">Older</button>
   </div>
   <br>
-</div>
-
-<div ng-show="loading">
-  <p class="text-center">Loading...</p>
 </div>
 <div class="section section-dark-blue" align="center" ng-controller="followCtrl">
   <h2>Never miss an Issue.<br/>
@@ -85,21 +72,21 @@
         <h2>Let's talk about us</h2>
         <div class="col-md-4">
             <div class="team-player">
-                <img src="/paper-kit/assets/paper_img/chet_faker_2.jpg" alt="Thumbnail Image" class="img-circle img-responsive">
+                <img src="img/CogniTeamPhotos/DeepanshuKapoor1.jpg" alt="Thumbnail Image" class="img-circle img-responsive">
                 <h5>Deepanshu Kapoor <br><small class="text-muted">Editor-in-Chief</small></h5>
                 <p>You can write here details about one of your team members. You can give more details about what they do. Feel free to add some <a href="#">links</a> for people to be able to follow them outside the site.</p>
             </div>
         </div>
         <div class="col-md-4">
             <div class="team-player">
-                <img src="/paper-kit/assets/paper_img/flume.jpg" alt="Thumbnail Image" class="img-circle img-responsive">
+                <img src="img/CogniTeamPhotos/KanikaSharma.jpg" alt="Thumbnail Image" class="img-circle img-responsive">
                 <h5>Kanika Sharma <br><small class="text-muted">Mentor, Editorial</small></h5>
                 <p>You can write here details about one of your team members. You can give more details about what they do. Feel free to add some <a href="#">links</a> for people to be able to follow them outside the site.</p>
             </div>
         </div>
         <div class="col-md-4">
             <div class="team-player">
-                <img src="/paper-kit/assets/paper_img/banks.jpg" alt="Thumbnail Image" class="img-circle img-circle img-responsive">
+                <img src="img/CogniTeamPhotos/SanyamGoel.jpg" alt="Thumbnail Image" class="img-circle img-circle img-responsive">
                 <h5>Sanyam Goel <br><small class="text-muted">Mentor, Web Team</small></h5>
                 <p>You can write here details about one of your team members. You can give more details about what they do. Feel free to add some <a href="#">links</a> for people to be able to follow them outside the site.</p>
             </div>
@@ -108,7 +95,7 @@
     <br>
     <div class="container">
       <div class="text-center">
-        <a ng-href="#/about-us" class="btn btn-primary btn-simple"><h5>More about us <i class="fa fa-chevron-right"></i></h5></a>
+        <a ng-href="#/about-us" class="btn btn-primary btn-simple"><h5>Meet the rest <i class="fa fa-chevron-right"></i></h5></a>
       </div>
     </div>
 </div>

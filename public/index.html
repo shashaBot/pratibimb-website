@@ -164,16 +164,16 @@
     <!-- home page -->
 
     <div class="container-fluid">
-      <div ui-view></div>
+      <div ui-view autoscroll="true"></div>
     </div>
     <!-- footer -->
     <footer class="footer-demo section-dark">
         <div class="container">
-            <nav class="pull-left">
-                <ul>
+            <nav>
+                <ul class="pull-left">
 
                     <li>
-                        <a href="https://congizance-dc325.firebaseapp.com">
+                        <a href="https://cognizance-dc325.firebaseapp.com">
                             Cognizance
                         </a>
                     </li>
@@ -188,17 +188,17 @@
                         </a>
                     </li>
                 </ul>
-            </nav>
-            <div class="pull-right">
-              <div class="social-icons">
-                <a href="https://www.facebook.com/bvpcognizance" class="btn btn-simple"><i class="fa fa-facebook"></i></a>
-                <a href="https://www.twitter.com" class="btn btn-simple"><i class="fa fa-google-plus-official"></i></a>
-                <a href="https://plus.google.com" class="btn btn-simple"><i class="fa fa-twitter"></i></a>
-              </div>
-            </div>
-            <div class="copyright pull-right">
-                © 2016, conjured by <i class="fa fa-users"></i> Congizance Team
-            </div>
+            <ul class="pull-right">
+                <li><a href="https://www.facebook.com/bvpcognizance" class="btn btn-simple"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="https://plus.google.com" class="btn btn-simple"><i class="fa fa-google-plus-official"></i></a></li>
+                <li><a href="https://www.twitter.com" class="btn btn-simple"><i class="fa fa-twitter"></i></a></li>
+            </ul>
+          </nav>
+        </div>
+        <div class="container">
+          <div class="copyright text-center">
+            © All Rights Reserved, 2016. Conjured by <i class="fa fa-users"></i> Cognizance Team
+          </div>
         </div>
     </footer>
     <div ng-controller="postCtrl">
