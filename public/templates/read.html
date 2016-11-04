@@ -1,13 +1,12 @@
-<div class="section section-white">
+<div class="section section-nude landing-section">
+  <div ng-show="loading" style="margin-top: 50%; margin-left: 50%;">
+    <p>Loading...</p>
+  </div>
   <div class="container tim-container" ng-show="!loading">
     <div class="row">
       <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-1 col-xs-12">
           <div class="card radius shadowDepth1 noshadow">
-              <div class="panel-heading">
-                  {{selectedPost.title}}
-              </div>
               <div class="card__image border-tlr-radius">
-                <span ng-if="iframeLoading">Loading iframe</span>
                   <iframe id="i_frame" ng-src="{{selectedPost.magLink}}" frameborder="0" allowfullscreen="true" allowtransparency="true"></iframe>
               </div>
               <div class="card__meta">
@@ -16,8 +15,8 @@
               </div>
               <article class="card__article">
                 <h2><a href="#">{{selectedPost.title}}</a></h2>
-
-                <p text-angular ng-model="selectedPost.body" ta-toolbar-class="btn-toolbar" ta-toolbar-group-class="btn-group" ta-toolbar-button-class="btn btn-default" ta-toolbar-active-button-class="active" class="post-body" >{{selectedPost.body}}</p>
+                <p class="post-body">{{selectedPost.body}}</p>
+                <p ng-if="user" text-angular ng-model="selectedPost.body" ta-toolbar-class="btn-toolbar" ta-toolbar-group-class="btn-group" ta-toolbar-button-class="btn btn-default" ta-toolbar-active-button-class="active" class="post-body" >{{selectedPost.body}}</p>
               </article>
           </div>
       </div>
@@ -30,7 +29,7 @@
     <div class="row">
       <div class="col-md-12">
         <div class="tim-title">
-          <h4>Comment Section:</h4>
+          <h4>Leave a comment:</h4>
         </div>
       </div>
     </div>
@@ -40,7 +39,4 @@
       </div>
     </div>
   </div>
-</div>
-<div ng-show="loading">
-  <p>Loading...</p>
 </div>

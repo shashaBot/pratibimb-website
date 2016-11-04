@@ -26,8 +26,6 @@
 }
 .main-content{
   position: relative;
-  /*margin-left: 12% !important;
-  margin-right: auto !important;*/
   display: block;
   z-index: 0;
 }
@@ -53,7 +51,14 @@
 a{
   cursor: pointer !important;
 }
-
+#i_frame{
+  position: relative;
+  height: 500px;
+  width: 100%;
+}
+.magFrame{
+  padding: 0px;
+}
 
 #cogniOwlCarousel .item{
   margin: 3px;

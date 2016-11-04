@@ -24,4 +24,5 @@ app.controller('readCtrl', function($scope, postService, $stateParams, $location
     console.log('disqus comments loaded');
     //other stuff you wanna do when comments get loaded
   };
+
 });
