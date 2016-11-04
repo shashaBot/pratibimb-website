@@ -1,0 +1,9 @@
+{
+  "owl" : [
+    {"item" : "<div class='item'><img class='lazyOwl' alt='owl image' data-src='img/cogni-website-images1.jpg'><div class='teammate-data'><h5>Name</h5><small>position</small><br><p>description</p></div></div>"},
+    {"item" : "<div class='item'><img class='lazyOwl' alt='owl image' data-src='img/cogni-website-images1.jpg'><div class='teammate-data'><h5>Name</h5><small>position</small><br><p>description</p></div></div>"},
+    {"item" : "<div class='item'><img class='lazyOwl' alt='owl image' data-src='img/cogni-website-images1.jpg'><div class='teammate-data'><h5>Name</h5><small>position</small><br><p>description</p></div></div>"},
+    {"item" : "<div class='item'><img class='lazyOwl' alt='owl image' data-src='img/cogni-website-images1.jpg'><div class='teammate-data'><h5>Name</h5><small>position</small><br><p>description</p></div></div>"},
+    {"item" : "<div class='item'><img class='lazyOwl' alt='owl image' data-src='img/cogni-website-images1.jpg'><div class='teammate-data'><h5>Name</h5><small>position</small><br><p>description</p></div></div>"}
+  ]
+}
