@@ -1,7 +1,4 @@
-<div class="section section-nude landing-section" id="scrollToSection">
-  <div ng-show="loading">
-    <p style="vertical-align: middle;" class="text-center">Loading...</p>
-  </div>
+<div class="section section-nude landing-section" id="scrollToSection" ng-hide="loading">
   <div class="container tim-container" ng-show="!loading">
     <div class="row">
       <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-12">
@@ -26,7 +23,7 @@
   </div>
 </div>
 
-<div class="section section-light-brown comment-section">
+<div class="section section-light-brown comment-section" ng-hide="loading">
   <div class="container">
     <div class="row">
       <div class="col-md-12">

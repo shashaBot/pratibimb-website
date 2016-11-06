@@ -58,18 +58,24 @@
 <!-- ng-file-upload js -->
     <script src="libs/ng-file-upload/ng-file-upload.min.js"></script>
 <!-- owl carousel -->
-    <!-- Basic stylesheet -->
+    <!-- Basic owlCarousel stylesheet -->
     <link rel="stylesheet" href="libs/OwlCarousel/owl-carousel/owl.carousel.css">
 
-     <!-- Default Theme -->
+     <!-- Default owlCarousel Theme -->
     <link rel="stylesheet" href="libs/OwlCarousel/owl-carousel/owl.theme.css">
 
-    <!-- Include js plugin -->
+    <!-- Include owl carousel js plugin -->
     <script src="libs/OwlCarousel/owl-carousel/owl.carousel.js"></script>
 
 <!-- social share plugin js -->
     <script src="libs/angular-socialshare/dist/angular-socialshare.min.js"></script>
+<!-- angular animate js -->
+    <script src="libs/angular-animate/angular-animate.min.js"></script>
 
+    <!-- angular in out animate ui router js -->
+    <script type="text/javascript" src="libs/angular-ui-router-anim-in-out/anim-in-out.js">
+
+    </script>
 <!-- main javascript files -->
     <script src="js\app.js"></script>
     <script src="js\services.js"></script>
@@ -101,17 +107,14 @@
     <link rel="stylesheet" type="text/css" href="libs/ct-paper-theme/assets/css/demo.css">
     <link rel="stylesheet" type="text/css" href="libs/ct-paper-theme/assets/css/examples.css">
     <link rel="stylesheet" href="css/bookshelf.css">
+    <link rel="stylesheet" type="text/css" href="libs/angular-ui-router-anim-in-out/css/anim-in-out.css">
+    <link rel="stylesheet" type="text/css" href="css/coffeePreloader.css">
     <link rel="stylesheet" type="text/css" href="css\style.css">
-    <link rel="stylesheet" type="text/css" href="css/back-top.css">
-    <link rel="sylesheet" type="text/css" href="css/cogniCarousel.css">
 
 <!-- title -->
     <title>Cognizance | The BVPIEEE E-Newsletter</title>
   </head>
   <body>
-
-
-
 
     <div class="container-fluid" id="bookshelfBack" ng-show="false">
     <div class="bookshelf_wrapper" >
@@ -126,8 +129,12 @@
       <div class="shelf"></div>
     </div>
   </div>
+  <div id="coffeePreloader" class="container-fluid">
+    <div class="coffee">
+    </div>
+  </div>
   <div ng-show="true">
-    <nav class="navbar navbar-ct-transparent navbar-fixed-top" role="navigation" id="navbar-top-banner" ng-cloak>
+    <nav class="navbar navbar-ct-transparent role="navigation" id="navbar-top-banner">
       <div class="container" ng-controller="authCtrl">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#banner-navigation" >
@@ -168,9 +175,8 @@
       </div>
     </nav>
     <!-- home page -->
-
     <div class="container-fluid">
-      <div ui-view autoscroll="true"></div>
+      <div ui-view class="anim-in-out anim-fade" autoscroll="true"></div>
     </div>
     <!-- footer -->
     <footer class="footer-demo section-dark">
@@ -184,7 +190,7 @@
                         </a>
                     </li>
                     <li>
-                        <a ng-href="#/about-us">
+                        <a ui-sref="about">
                            Meet the team
                         </a>
                     </li>

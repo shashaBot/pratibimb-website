@@ -1,6 +1,7 @@
 var app = angular.module('CogniApp',
 [
   'firebase',
+  'ngAnimate',
   'ui.router',
   'CogniApp.services',
   'CogniApp.controllers',
@@ -8,7 +9,8 @@ var app = angular.module('CogniApp',
   'textAngular',
   'wu.masonry',
   'angularUtils.directives.dirDisqus',
-  '720kb.socialshare'
+  '720kb.socialshare',
+  'anim-in-out'
 ]);
 // crossdomain loading iframes
 app.config(function($sceDelegateProvider) {
@@ -92,6 +94,18 @@ app.run(function($rootScope, $state){
     else{
       console.log("I don't give two shits!");
     }
+  });
+  $rootScope.showPreloader = true;
+  $rootScope.$on('animStart', function($event, element, speed) {
+      // do something
+      $rootScope.showPreloader = true;
+      $("footer").hide();
+  });
+
+  $rootScope.$on('animEnd', function($event, element, speed) {
+      // do something
+      $rootScope.showPreloader = false;
+      $("footer").show();
   });
 
 });

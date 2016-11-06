@@ -1,15 +1,20 @@
 var app = angular.module('controller.readCtrl', []);
 
-app.controller('readCtrl', function($scope, postService, $stateParams, $location){
-  $scope.loading = false;
+app.controller('readCtrl', function($scope, postService, $stateParams, $timeout, $location){
+  $scope.loading = true;
   if(!postService.posts){
     $scope.loading = true;
     postService.load().then(function(){
       $scope.selectedPost = postService.selectPost($stateParams.id);
-      $scope.loading = false;
+      $timeout(function(){
+        $scope.loading = false;
+      }, 2000);
     });
   }
   else{
+    $timeout(function(){
+      $scope.loading = false;
+    }, 2000);
     $scope.selectedPost = postService.selectPost($stateParams.id);
   }
   $scope.disqusConfig = {
