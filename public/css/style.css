@@ -76,5 +76,43 @@ a{
 	box-shadow: none;
 	}
 .card{
-  background-color: #F8F9ED;
+  background-color: antiquewhite;
+  border-radius: 8px;
+  box-shadow: 0 2px 2px rgba(204, 197, 185, 0.5)
+}
+
+.social-btn{
+  border-radius: 100%;
+  padding-right: 2px;
+  padding-left: 4px;
+}
+.social-fb:hover{
+  background-color: #3b5998;
+  color: white;
+  border-color: #3b5998;
+
+}
+.social-gp:hover {
+  background-color: #d34836;
+  border-color: #d34836;
+  color: white;
+}
+.social-pk:hover {
+  background-color: #ef4056;
+  border-color: #ef4056;
+  color: white;
+}
+.social-ws:hover {
+  background-color: #25d366;
+  border-color: #25d366;
+  color: white;
+}
+.social-tw:hover {
+  background-color: #1da1f2;
+  border-color: #1da1f2;
+  color: white;
+}
+.post-image{
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
 }

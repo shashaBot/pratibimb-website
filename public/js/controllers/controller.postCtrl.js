@@ -1,10 +1,8 @@
 var app = angular.module('controller.postCtrl', []);
 
-app.controller('postCtrl', function($scope, postService, $rootScope, $anchorScroll, $location, authService, $state) {
-
+app.controller('postCtrl', function($scope, Socialshare, postService, $location, $rootScope, $anchorScroll, $location, authService, $state) {
     $scope.goToComments = function(post){
-      //path to comments of the selectedPost
-      //..use smoothScroll maybe...
+      postService.scrollToComments(post);
     };
 
     $scope.loading = false;
@@ -15,12 +13,13 @@ app.controller('postCtrl', function($scope, postService, $rootScope, $anchorScro
         postService.load().then(function(data) {
             if(data){
               $scope.posts = data;
+              $scope.showLoadMore = true;
             }
             else{
               //no posts to display
+              $scope.showLoadMore = false;
             }
             $scope.loading = false;
-            $scope.showLoadMore = true;
         }, function(){
           //loading failure error message
           $scope.showLoadMore = true;
@@ -61,19 +60,9 @@ app.controller('postCtrl', function($scope, postService, $rootScope, $anchorScro
     //back to top button function
     $scope.backToTop = function (){
         console.log('back to top called');
-        $("html, body").animate({ scrollTop: 0 }, 1000);
+        var scrollTo = $('#scrollToSection').position();
+        console.log('scrollTo:', scrollTo);
+        $("html, body").animate({ scrollTop:  scrollTo.top}, 1000);
     };
-
-    $(document).ready(function($) {
-
-      $('.card__share > a').on('click', function(e){
-        e.preventDefault() // prevent default action - hash doesn't appear in url
-        console.log('found .card__share', this);
-        $(this).parent().find( 'div' ).toggleClass( 'card__social--active' );
-        $(this).toggleClass('share-expanded');
-      });
-
-    });
-
 
 });

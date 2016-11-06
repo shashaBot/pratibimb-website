@@ -1,6 +1,6 @@
 var app = angular.module('service.postService', []);
 
-app.factory('postService', function($state, $stateParams, $q) {
+app.factory('postService', function($state, $stateParams, $q, $timeout) {
 
     var self = {
         'loading': false,
@@ -124,7 +124,19 @@ app.factory('postService', function($state, $stateParams, $q) {
         var selectPostKey = findPostKey(postDate);
         self.selectedPost = self.posts[selectPostKey];
         return self.selectedPost;
-      
+
+    };
+
+    self.scrollToComments = function(post){
+      $state.transitionTo('read', {id: post.date}).then(function(){
+        self.selectPost(post.date);
+        let scrollTo = $('.comment-section').position();
+        $timeout(function(){
+          $("html, body").animate({ scrollTop:  scrollTo.top + 300}, 1500);
+          //show some animation indicatin the comment area
+        }, 3000);
+      });
+
     };
 
     return self;

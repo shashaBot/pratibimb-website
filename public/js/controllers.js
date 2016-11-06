@@ -4,5 +4,6 @@ var app = angular.module('CogniApp.controllers', [
 	 'controller.addPostCtrl',
 	 'controller.postCtrl',
 	 'controller.followCtrl',
-	 'controller.aboutCtrl'
+	 'controller.aboutCtrl',
+	 'controller.shareCtrl'
 	 ]);

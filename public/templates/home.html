@@ -1,5 +1,5 @@
 <div id="cogniCarousel">
-  <div id="carousel-cognizance-presentation" class="carousel slide" data-ride="carousel">
+  <div id="carousel-cognizance-presentation" class="carousel slide carousel-fade" data-ride="carousel">
     <ol class="carousel-indicators">
       <li data-target="#carousel-cognizance-presentation" data-slide-to="0" class="active"></li>
       <li data-target="#carousel-cognizance-presentation" data-slide-to="1" ></li>
@@ -18,31 +18,46 @@
     </a>
   </div>
 </div>
-<div class="section section-nude landing-section">
+<div class="section section-nude landing-section" id="scrollToSection">
   <div class="container main-content">
+    <div ng-show="loading">
+      <p class="text-center" style="vertical-align: middle">
+        Loading...
+      </p>
+    </div>
     <div class="row">
       <div class="col-md-10 col-md-offset-1 col-sm-12 col-xs-12">
-        <div masonry reload-on-resize preserve-order>
+        <div masonry="{transitionDuration: '0.8s'}" reload-on-resize preserve-order>
           <div class="row">
             <div class="masonry-brick col-md-4 col-sm-6 col-xs-12" ng-repeat="post in posts">
-              <div class="card radius shadowDepth1 noshadow">
-                <div class="card__image border-tlr-radius">
-                  <img ng-src="{{post.imageUrl}}" alt="image" class="img-rounded img-responsive">
+              <div class="card radius">
+                <div class="card__image">
+                  <img ng-src="{{post.imageUrl}}" alt="image" class="post-image img-rounded img-responsive noshadow">
                 </div>
 
                 <div class="card__content card__padding">
-
-
                   <div class="card__meta">
                     <a href="#">{{post.theme}}</a>
                     <span><i class="fa fa-calendar" aria-hidden="true"></i></span><time>{{post.issue}}</time>
                   </div>
-
                   <article class="card__article">
-                    <a ui-sref="read({id:post.date})"><h2>{{post.title}}</h2></a>
+                    <h2>{{post.title}}</h2>
 
-                    <p class="post-body" ng-init="post.body=((post.body).length>500? post.body.substr(0,400)+'...': post.body)">{{post.body}}</p>
+                    <p class="post-body" ng-init="showPostHome=((post.body).length>500? post.body.substr(0,400)+'...': post.body)">{{showPostHome}}</p>
                   </article>
+                  <div>
+                    <span><button class="btn btn-fill btn-sm" ui-sref="read({id:post.date})">Read</button></span>
+                    <span><button class="btn btn-danger btn-fill btn-sm" ng-click="goToComments(post);">Comment</button></span>
+                  </div>
+                  <hr style="border-color: #66615b;">
+                  <div ng-controller="shareCtrl">
+                  <h6>Share this:</h6>
+                    <span><a class="btn btn-sm social-btn social-fb" ng-click="fbShare(post)"><i class="fa fa-facebook-f"></i></a></span>
+                    <span><a class="btn btn-sm social-btn social-gp" ng-click="gpShare(post)"><i class="fa fa-google-plus"></i></a></span>
+                    <span><a class="btn btn-sm social-btn social-pk" ng-click="pkShare(post)"><i class="fa fa-get-pocket"></i></a></span>
+                    <span><a class="btn btn-sm social-btn social-ws" ng-click="wsShare(post)"><i class="fa fa-whatsapp"></i></a></span>
+                    <span><a class="btn btn-sm social-btn social-tw" ng-click="twShare(post)"><i class="fa fa-twitter"></i></a></span>
+                  </div>
                 </div>
               </div>
             </div>
