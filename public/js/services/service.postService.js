@@ -132,7 +132,7 @@ app.factory('postService', function($state, $stateParams, $q, $timeout) {
         self.selectPost(post.date);
         let scrollTo = $('.comment-section').position();
         $timeout(function(){
-          $("html, body").animate({ scrollTop:  scrollTo.top + 300}, 1500);
+          $("html, body").animate({ scrollTop:  scrollTo.top}, 1500);
           //show some animation indicatin the comment area
         }, 3000);
       });

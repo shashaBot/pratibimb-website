@@ -85,7 +85,7 @@ app.run(function($rootScope, $state){
     if(to.data.needAdmin && !$rootScope.user){
       e.preventDefault();
       console.log('prevented the collapse of my world');
-      //maybe show a dialog like you snooping slimy bitch types
+      //maybe show a dialog like 'you snooping bitch'
       $state.go('home');
     }
     else if (to.data.needAdmin && $rootScope.user){
@@ -95,6 +95,7 @@ app.run(function($rootScope, $state){
       console.log("I don't give two shits!");
     }
   });
+  //manage variables on animation start and animation end
   $rootScope.showPreloader = true;
   $rootScope.$on('animStart', function($event, element, speed) {
       // do something
