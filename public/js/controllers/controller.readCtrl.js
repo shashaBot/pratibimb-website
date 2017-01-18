@@ -20,9 +20,9 @@ app.controller('readCtrl', function($scope, postService, $stateParams, $timeout,
     $scope.selectedPostKey = postService.selectPostKey;
   }
   $scope.disqusConfig = {
-    disqus_shortname: 'cognizance-4',
+    disqus_shortname: 'pratibimb',
     disqus_identifier: $stateParams.id,
-    disqus_url: 'https://cognizance-dc325.firebaseapp.com' + $location.path()
+    disqus_url: 'https://pratibimb-9f1e0.firebaseapp.com' + $location.path()
   };
   $scope.goToComments = function(){
     let scrollTo = $('.comment-section').position();

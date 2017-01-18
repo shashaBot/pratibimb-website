@@ -150,7 +150,7 @@ a{
   z-index: -1;
 }
 .demo-header-image{
-  background-image: url('../img/cognizanceHeaderImage.jpg');
+  background-image: url('../img/background.jpg');
   min-height: 100vh;
 }
 
